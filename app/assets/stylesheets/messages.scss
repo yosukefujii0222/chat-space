@@ -1,3 +1,222 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.notification {
+  .alert {
+    text-align: center;
+    background-color: #38AEF0;
+    color: #fff;
+  }
+}
+.chat-side {
+  height: 100vh;
+  width: 300px;
+  float: left;
+  .chat-side__user {
+    height: 15%;
+    width: 100%;
+    background-color: #253141;
+    position: relative;
+    .user__content {
+      width: 100%;
+      position: absolute;
+      margin: auto 0;
+      height: 50px;
+      line-height: 50px;
+      top: 0;
+      bottom: 0;
+      .user__content--name {
+        position: relative;
+        margin-left: 20px;
+        float: left;
+        p#seo {
+          font-size: 16px;
+          font-weight: bold;
+          color: #FFFFFF;
+        }
+      }
+      .user__content--nw {
+        position: relative;
+        float: right;
+        margin-right: 20px;
+        div i {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+
+    }
+  }
+  .chat-side__groups {
+    height: 85%;
+    width: 100%;
+    background-color: #2f3e51;
+    .groups__list {
+      .list__group {
+        .group--name {
+          padding-top: 20px;
+          margin: 0 20px 5px 20px;
+          p#sample {
+            font-size: 15px;
+            color: #FFFFFF;
+          }
+        }
+        .group--message {
+          margin: 0 20px 40px 20px;
+          p#good {
+            font-size: 11px;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.chat-main {
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+  .chat-main__header {
+    height: 15%;
+    border: 1px solid #eee;
+    .chat-main__header__group {
+      margin: 0 40px;
+      .group--name {
+        margin: 35px 0 15px;
+        float: left;
+        font-size: 20px;
+        color: #333333;
+      }
+      button {
+        float: right;
+        border: 1px solid #38AEF0;
+        font-size: 15px;
+        color: #38AEF0;
+        margin-top: 28px;
+        padding: 11px 20px 11px 20px;
+        background-color: #fff;
+      }
+      .clear {
+        clear: both;
+      }
+    }
+    .chat-main__header__members {
+      margin: 0 40px;
+      display: block;
+      font-size: 12px;
+      color: #999999;
+    }
+
+  }
+  .chat-main__body {
+    height: calc( 100vh - 15% - 90px);
+    overflow-y: scroll;
+    .chat-main__body__lists {
+
+      .list__message {
+        padding-top: 46px;
+        padding-bottom: 40px;
+        margin: 0 40px;
+        .message--name{
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          float: left;
+        }
+        .message--time{
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
+          float: left
+        }
+        .clear {
+          clear: both;
+        }
+        .message--body {
+          padding-top: 10px;
+          font-size: 14px;
+          color: #434A54;
+        }
+      }
+
+      .chat-main__message2 {
+        padding-top: 46px;
+        padding-bottom: 40px;
+        margin: 0 40px;
+        .chat-main__message--name{
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          float: left;
+        }
+        .chat-main__message--time{
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
+          float: left
+        }
+        .clear {
+          clear: both;
+        }
+        .chat-main__message--body {
+          padding-top: 10px;
+          font-size: 14px;
+          color: #434A54;
+        }
+      }
+    }
+  }
+  .chat-main__footer {
+    height: 90px;
+    background-color: #B8C3C7;
+    position: relative;
+    width: 100%;
+    .chat-main__footer__form {
+      padding: 20px 0;
+      margin: 0 40px;
+      height: 50px;
+
+      .text-with-icon {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        input[type=text] {
+          width: calc(100% - 179px);
+          position: relative;
+          padding-left: 10px;
+          height: 50px;
+          border:none;
+
+        }
+        .icon {
+          display: inline-block;
+          overflow: hidden;
+          position: absolute;
+          background-color: #fff;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 10px;
+
+          input[type=file] {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin-right: 10px;
+            font-size: 100px;
+          }
+        }
+        .submit {
+          position: relative;
+          float: right;
+          height: 50px;
+          width: 100px;
+          text-align: center;
+          margin-left: 15px;
+          background-color: #38AEF0;
+          color: #fff;
+          border: none;
+        }
+      }
+    }
+  }
+}
