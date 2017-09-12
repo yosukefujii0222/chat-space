@@ -1,7 +1,7 @@
 .notification {
   .alert {
     text-align: center;
-    background-color: #38AEF0;
+    background-color: $accent-color;
     color: #fff;
   }
 }
@@ -29,7 +29,7 @@
         p#seo {
           font-size: 16px;
           font-weight: bold;
-          color: #FFFFFF;
+          color: $side-menu-text-color;
         }
       }
       .user__content--nw {
@@ -38,7 +38,7 @@
         margin-right: 20px;
         div i {
           text-decoration: none;
-          color: #fff;
+          color: $side-menu-text-color;
         }
       }
 
@@ -55,14 +55,14 @@
           margin: 0 20px 5px 20px;
           p#sample {
             font-size: 15px;
-            color: #FFFFFF;
+            color: $side-menu-text-color;
           }
         }
         .group--message {
           margin: 0 20px 40px 20px;
           p#good {
             font-size: 11px;
-            color: #FFFFFF;
+            color: $side-menu-text-color;
           }
         }
       }
@@ -87,15 +87,15 @@
       }
       button {
         float: right;
-        border: 1px solid #38AEF0;
+        border: 1px solid $accent-color;
         font-size: 15px;
-        color: #38AEF0;
+        color: $accent-color;
         margin-top: 28px;
         padding: 11px 20px 11px 20px;
         background-color: #fff;
       }
       .clear {
-        clear: both;
+        @include clear;
       }
     }
     .chat-main__header__members {
@@ -128,35 +128,9 @@
           float: left
         }
         .clear {
-          clear: both;
+          @include clear;
         }
         .message--body {
-          padding-top: 10px;
-          font-size: 14px;
-          color: #434A54;
-        }
-      }
-
-      .chat-main__message2 {
-        padding-top: 46px;
-        padding-bottom: 40px;
-        margin: 0 40px;
-        .chat-main__message--name{
-          font-size: 16px;
-          font-weight: bold;
-          color: #434A54;
-          float: left;
-        }
-        .chat-main__message--time{
-          font-size: 12px;
-          color: #999999;
-          padding-left: 10px;
-          float: left
-        }
-        .clear {
-          clear: both;
-        }
-        .chat-main__message--body {
           padding-top: 10px;
           font-size: 14px;
           color: #434A54;
@@ -212,7 +186,7 @@
           width: 100px;
           text-align: center;
           margin-left: 15px;
-          background-color: #38AEF0;
+          background-color: $accent-color;
           color: #fff;
           border: none;
         }
