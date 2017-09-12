@@ -1,0 +1,45 @@
+.notification
+  .alert
+    チャットグループが作成されました。
+
+.chat-side
+  .chat-side__user
+    .chat-side__user_content
+      .chat-side__user_content--name
+        %p#seo seo
+      .chat-side__user_content--nw
+        = link_to "/" do
+          %i.fa.fa-pencil-square-o
+        = link_to "/" do
+          %i.fa.fa-cog
+
+  .chat-side__groups
+    .chat-side__groups_list
+      .chat-side__groups_list--group
+        = render partial: "group"
+
+.chat-main
+  .chat-main__header
+    .chat-main__header_group
+      .chat-main__header_group--name
+        Sample
+      %button{type:"button"}
+        Edit
+      .clear
+    .chat-main__header_members
+      Members: seo neko
+
+  .chat-main__body
+    .chat-main__body_list
+      .chat-main__body_list--message
+        = render partial: "message"
+
+  .chat-main__footer
+    .chat-main__footer_form
+      %form_for
+        .text-with-icon
+          %input{type:"text", name:"message", placeholder:"type a message"}
+          .icon
+            %i.fa.fa-picture-o
+            %input{type:"file"}
+          %input.submit{type:"submit", value:"SEND"}

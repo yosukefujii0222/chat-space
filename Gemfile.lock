@@ -55,6 +55,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (5.0.2)
@@ -92,7 +94,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
-    multi_json (1.12.1)
+    multi_json (1.12.2)
     mysql2 (0.4.9)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -181,6 +183,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   erb2haml
+  font-awesome-rails
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

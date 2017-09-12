@@ -1,0 +1,198 @@
+.notification {
+  .alert {
+    text-align: center;
+    background-color: $accent-color;
+    color: #fff;
+  }
+}
+.chat-side {
+  height: 100vh;
+  width: 300px;
+  float: left;
+  &__user {
+    height: 15%;
+    width: 100%;
+    background-color: #253141;
+    position: relative;
+    &_content {
+      width: 100%;
+      position: absolute;
+      margin: auto 0;
+      height: 50px;
+      line-height: 50px;
+      top: 0;
+      bottom: 0;
+      &--name {
+        position: relative;
+        margin-left: 20px;
+        float: left;
+        p#seo {
+          font-size: 16px;
+          font-weight: bold;
+          color: $side-menu-text-color;
+        }
+      }
+      &--nw {
+        position: relative;
+        float: right;
+        margin-right: 20px;
+        i {
+          text-decoration: none;
+          color: $side-menu-text-color;
+        }
+      }
+
+    }
+  }
+  &__groups {
+    height: 85%;
+    width: 100%;
+    background-color: #2f3e51;
+    &_list {
+      &--group {
+        &-name {
+          padding-top: 20px;
+          margin: 0 20px 5px 20px;
+          p#sample {
+            font-size: 15px;
+            color: $side-menu-text-color;
+          }
+        }
+        &-message {
+          margin: 0 20px 40px 20px;
+          p#good {
+            font-size: 11px;
+            color: $side-menu-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.chat-main {
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+  &__header {
+    border: 1px solid #eee;
+    height: 15%;
+    &_group {
+      margin: 0 40px;
+      &--name {
+        margin: 35px 0 15px;
+        float: left;
+        font-size: 20px;
+        color: #333333;
+      }
+      button {
+        float: right;
+        border: 1px solid $accent-color;
+        font-size: 15px;
+        color: $accent-color;
+        margin-top: 28px;
+        padding: 11px 20px 11px 20px;
+        background-color: $main-bg-color;
+      }
+      .clear {
+        @include clear;
+      }
+    }
+    &_members {
+      margin: 0 40px;
+      display: block;
+      font-size: 12px;
+      color: $main-h2-color;
+    }
+
+  }
+  .chat-main__body {
+    height: calc( 100vh - 15% - 90px);
+    overflow-y: scroll;
+    &_list {
+      &--message {
+        padding-top: 46px;
+        padding-bottom: 40px;
+        margin: 0 40px;
+        &-name {
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          float: left;
+        }
+        &-time {
+          font-size: 12px;
+          color: $main-h2-color;
+          padding-left: 10px;
+          float: left
+        }
+        .clear {
+          @include clear;
+        }
+        &-body {
+          padding-top: 10px;
+          font-size: 14px;
+          color: #434A54;
+        }
+      }
+    }
+  }
+  .chat-main__footer {
+    height: 90px;
+    background-color: #B8C3C7;
+    position: relative;
+    width: 100%;
+
+    &_form {
+      padding: 20px 0;
+      margin: 0 40px;
+      height: 50px;
+
+      .text-with-icon {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+
+        input[type=text] {
+          width: calc(100% - 179px);
+          position: relative;
+          padding-left: 10px;
+          height: 50px;
+          border:none;
+        }
+
+        .icon {
+          display: inline-block;
+          overflow: hidden;
+          position: absolute;
+          background-color: $main-bg-color;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 10px;
+
+          input[type=file] {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin-right: 10px;
+            font-size: 100px;
+          }
+        }
+
+        .submit {
+          position: relative;
+          float: right;
+          height: 50px;
+          width: 100px;
+          text-align: center;
+          margin-left: 15px;
+          background-color: $accent-color;
+          color: $main-bg-color;
+          border: none;
+        }
+      }
+    }
+  }
+}
