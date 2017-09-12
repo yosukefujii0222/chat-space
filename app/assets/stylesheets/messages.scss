@@ -9,12 +9,12 @@
   height: 100vh;
   width: 300px;
   float: left;
-  .chat-side__user {
+  &__user {
     height: 15%;
     width: 100%;
     background-color: #253141;
     position: relative;
-    .user__content {
+    &_content {
       width: 100%;
       position: absolute;
       margin: auto 0;
@@ -22,7 +22,7 @@
       line-height: 50px;
       top: 0;
       bottom: 0;
-      .user__content--name {
+      &--name {
         position: relative;
         margin-left: 20px;
         float: left;
@@ -32,7 +32,7 @@
           color: $side-menu-text-color;
         }
       }
-      .user__content--nw {
+      &--nw {
         position: relative;
         float: right;
         margin-right: 20px;
@@ -48,9 +48,9 @@
     height: 85%;
     width: 100%;
     background-color: #2f3e51;
-    .groups__list {
-      .list__group {
-        .group--name {
+    &_list {
+      &--group {
+        &-name {
           padding-top: 20px;
           margin: 0 20px 5px 20px;
           p#sample {
@@ -58,7 +58,7 @@
             color: $side-menu-text-color;
           }
         }
-        .group--message {
+        &-message {
           margin: 0 20px 40px 20px;
           p#good {
             font-size: 11px;
@@ -74,12 +74,12 @@
   height: 100vh;
   width: calc( 100vw - 300px );
   float: left;
-  .chat-main__header {
+  &__header {
     border: 1px solid #eee;
     height: 15%;
-    .chat-main__header__group {
+    &_group {
       margin: 0 40px;
-      .group--name {
+      &--name {
         margin: 35px 0 15px;
         float: left;
         font-size: 20px;
@@ -98,7 +98,7 @@
         @include clear;
       }
     }
-    .chat-main__header__members {
+    &_members {
       margin: 0 40px;
       display: block;
       font-size: 12px;
@@ -109,19 +109,18 @@
   .chat-main__body {
     height: calc( 100vh - 15% - 90px);
     overflow-y: scroll;
-    .chat-main__body__lists {
-
-      .list__message {
+    &_list {
+      &--message {
         padding-top: 46px;
         padding-bottom: 40px;
         margin: 0 40px;
-        .message--name {
+        &-name {
           font-size: 16px;
           font-weight: bold;
           color: #434A54;
           float: left;
         }
-        .message--time {
+        &-time {
           font-size: 12px;
           color: $main-h2-color;
           padding-left: 10px;
@@ -130,7 +129,7 @@
         .clear {
           @include clear;
         }
-        .message--body {
+        &-body {
           padding-top: 10px;
           font-size: 14px;
           color: #434A54;
@@ -143,7 +142,8 @@
     background-color: #B8C3C7;
     position: relative;
     width: 100%;
-    .chat-main__footer__form {
+
+    &_form {
       padding: 20px 0;
       margin: 0 40px;
       height: 50px;
@@ -152,14 +152,15 @@
         width: 100%;
         display: inline-block;
         position: relative;
+
         input[type=text] {
           width: calc(100% - 179px);
           position: relative;
           padding-left: 10px;
           height: 50px;
           border:none;
-
         }
+
         .icon {
           display: inline-block;
           overflow: hidden;
@@ -179,6 +180,7 @@
             font-size: 100px;
           }
         }
+
         .submit {
           position: relative;
           float: right;
