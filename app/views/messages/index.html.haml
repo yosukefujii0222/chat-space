@@ -1,47 +1,47 @@
-%div.notification
-  %div.alert
+.notification
+  .alert
     チャットグループが作成されました。
 
-%div.chat-side
-  %div.chat-side__user
-    %div.user__content
-      %div.user__content--name
+.chat-side
+  .chat-side__user
+    .user__content
+      .user__content--name
         %p#seo seo
-      %div.user__content--nw
+      .user__content--nw
         %div
           = link_to "/" do
             %i.fa.fa-pencil-square-o
           = link_to "/" do
             %i.fa.fa-cog
 
-  %div.chat-side__groups
-    %div.groups__list
-      %div.list__group
+  .chat-side__groups
+    .groups__list
+      .list__group
         = render :partial => "group"
 
-%div.class.chat-main
+.class.chat-main
 
-  %div.chat-main__header
-    %div.chat-main__header__group
-      %div.group--name
+  .chat-main__header
+    .chat-main__header__group
+      .group--name
         Sample
       %button{type:"button"}
         Edit
-      %div.clear
-    %div.chat-main__header__members
+      .clear
+    .chat-main__header__members
       Members: seo neko
 
-  %div.chat-main__body
-    %div.chat-main__body__lists
-      %div.list__message
+  .chat-main__body
+    .chat-main__body__lists
+      .list__message
         = render :partial => "message"
 
-  %div.chat-main__footer
-    %div.chat-main__footer__form
+  .chat-main__footer
+    .chat-main__footer__form
       %form
-        %div.text-with-icon
+        .text-with-icon
           %input{type:"text", name:"message", placeholder:"type a message"}
-          %div.icon
+          .icon
             %i.fa.fa-picture-o
             %input{type:"file"}
           %input.submit{type:"submit", value:"SEND"}
