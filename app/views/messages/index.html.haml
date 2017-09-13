@@ -10,7 +10,7 @@
       .chat-side__user_content--nw
         = link_to "/" do
           %i.fa.fa-pencil-square-o
-        = link_to "/users/:id/edit" do
+        = link_to edit_user_path(current_user) do
           %i.fa.fa-cog
 
   .chat-side__groups
