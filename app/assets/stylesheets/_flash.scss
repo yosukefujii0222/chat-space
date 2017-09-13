@@ -1,0 +1,10 @@
+.flash {
+  color: $side-menu-text-color;
+  text-align: center;
+  &__alert {
+    background-color: red;
+  }
+  &__notice {
+    background-color: $accent-color;
+  }
+}
