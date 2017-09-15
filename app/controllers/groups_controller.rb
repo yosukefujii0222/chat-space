@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find_by(id: 24)
+    @group = Group.find(params[:id])
   end
 
   def update
