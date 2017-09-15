@@ -12,7 +12,7 @@
   .chat-side__groups
     .chat-side__groups_list
       .chat-side__groups_list--group
-        = render partial: "group"
+        = render partial: "messages/group"
 
 .chat-main
   .chat-main__header
@@ -28,7 +28,7 @@
   .chat-main__body
     .chat-main__body_list
       .chat-main__body_list--message
-        = render partial: "message"
+        = render partial: "messages/message"
 
   .chat-main__footer
     .chat-main__footer_form
