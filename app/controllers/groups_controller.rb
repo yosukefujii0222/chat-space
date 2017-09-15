@@ -4,8 +4,12 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(strong_params)
-    redirect_to :root
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to :root
+    else
+      render :new
+    end
   end
 
   def edit
@@ -13,7 +17,7 @@ class GroupsController < ApplicationController
 
   private
 
-  def strong_params
+  def group_params
     params.require(:group).permit(:groupname, user_ids: [])
   end
 
