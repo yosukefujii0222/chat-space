@@ -4,7 +4,8 @@
     - if @group.errors.any?
       .chat-group-form__errors
         %h2
-          1件のエラーが発生しました。
+          = @group.errors.count
+          件のエラーがあります。
           %ul
             - @group.errors.full_messages.each do |message|
               %li= message
