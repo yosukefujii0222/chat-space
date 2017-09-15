@@ -4,8 +4,11 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(strong_params)
-    redirect_to :root
+    @group = Group.new(strong_params)
+    if @group.save
+    else
+      render :new
+    end
   end
 
   def edit
