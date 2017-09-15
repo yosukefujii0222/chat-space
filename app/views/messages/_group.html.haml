@@ -1,4 +1,7 @@
-%div.chat-side__groups_list--group-name
-  %p#sample sample
-%div.chat-side__groups_list--group-message
-  %p#good Good bye world!
+- current_user.groups.each do |group|
+  %div.chat-side__groups_list--group-name
+    %p#sample
+      = group.groupname
+  %div.chat-side__groups_list--group-message
+    %p#good
+      Good bye world!
