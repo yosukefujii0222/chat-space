@@ -32,10 +32,12 @@
 
   .chat-main__footer
     .chat-main__footer_form
-      %form_for
+      = form_for @message, url: group_messages_url, method: :post do |m|
         .text-with-icon
-          %input{type:"text", name:"message", placeholder:"type a message"}
-          .icon
+          = m.text_area :body, placeholder: "type a message"
+          %label.file
             %i.fa.fa-picture-o
-            %input{type:"file"}
-          %input.submit{type:"submit", value:"SEND"}
+              = m.file_field :image
+          .btn
+            = m.submit "SEND"
+
