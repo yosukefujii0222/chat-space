@@ -1,7 +1,8 @@
-%div.chat-main__body_list--message-name
-  seo
-%div.chat-main__body_list--message-time
-  2016/09/21 06:16:55
-%div.clear
-%div.chat-main__body_list--message-body
-  Hellow world!
+- @group.messages.each do |msg|
+  %div.chat-main__body_list--message-name
+    = msg.user.name
+  %div.chat-main__body_list--message-time
+    = msg.updated_at
+  %div.clear
+  %div.chat-main__body_list--message-body
+    = msg.body
