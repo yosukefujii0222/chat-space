@@ -1,5 +1,11 @@
 class Message < ApplicationRecord
-  validates :body, presence: true
   belongs_to :group
   belongs_to :user
+
+  validates :body_or_image, presence: true
+
+  private
+    def body_or_image
+      body.presence or image.presence
+    end
 end
