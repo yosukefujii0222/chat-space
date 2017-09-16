@@ -6,3 +6,5 @@
   %div.clear
   %div.chat-main__body_list--message-body
     = msg.body
+    - if msg.image?
+      = image_tag msg.image_url(:thumb)

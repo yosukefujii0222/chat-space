@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module ChatSpace
   class Application < Rails::Application
     config.i18n.default_locale = :ja
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     config.generators do |g|
       g.javascripts false
       g.helper false
