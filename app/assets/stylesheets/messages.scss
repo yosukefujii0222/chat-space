@@ -140,59 +140,48 @@
   .chat-main__footer {
     height: 90px;
     background-color: #B8C3C7;
-    position: relative;
-    width: 100%;
+
 
     &_form {
       padding: 20px 0;
       margin: 0 40px;
       height: 50px;
+      position: relative;
+        .text-with-icon {
+          textarea {
+            float: left;
+            width: calc( 100% - 162.16px );
+            position: relative;
+            padding-left: 10px;
+            height: 50px;
+            line-height: 50px;
+            border:none;
+          }
 
-      .text-with-icon {
-        width: 100%;
-        display: inline-block;
-        position: relative;
-
-        input[type=text] {
-          width: calc(100% - 179px);
-          position: relative;
-          padding-left: 10px;
-          height: 50px;
-          border:none;
-        }
-
-        .icon {
-          display: inline-block;
-          overflow: hidden;
-          position: absolute;
-          background-color: $main-bg-color;
-          height: 50px;
-          line-height: 50px;
-          padding: 0 10px;
-
-          input[type=file] {
+          label i {
+            float: left;
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            background-color: $main-bg-color;
+            padding: 0 10px;
+            #message_image {
+              display: none;
+            }
+          }
+          .btn input {
+            float: left;
             position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            margin-right: 10px;
-            font-size: 100px;
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            margin-left: 15px;
+            background-color: $accent-color;
+            color: $main-bg-color;
+            border: none;
           }
         }
 
-        .submit {
-          position: relative;
-          float: right;
-          height: 50px;
-          width: 100px;
-          text-align: center;
-          margin-left: 15px;
-          background-color: $accent-color;
-          color: $main-bg-color;
-          border: none;
-        }
-      }
     }
   }
 }
