@@ -22,7 +22,11 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    @group.update(group_params)
+    if @group.update(group_params)
+      redirect_to :root, notice: "グループ名を変更しました"
+    else
+      render :edit
+    end
   end
 
   private
