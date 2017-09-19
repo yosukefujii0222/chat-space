@@ -21,7 +21,8 @@
       .chat-main__header_group--name
         = current_user.groups.find(params[:group_id]).groupname
       %button{type:"button"}
-        Edit
+        = link_to edit_group_path(params[:group_id]) do
+          Edit
       .clear
     .chat-main__header_members
       Members:
