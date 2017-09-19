@@ -53,9 +53,10 @@
         &-name {
           padding-top: 20px;
           margin: 0 20px 5px 20px;
-          p#sample {
+          p#sample a {
             font-size: 15px;
             color: $side-menu-text-color;
+            text-decoration: none;
           }
         }
         &-message {

@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
   def index
-    render template: 'messages/index'
   end
 
   def new
@@ -30,5 +29,6 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:groupname, user_ids: [])
   end
+
 
 end
