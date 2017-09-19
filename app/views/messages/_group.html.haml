@@ -3,5 +3,9 @@
     %p#sample
       = group.groupname
   %div.chat-side__groups_list--group-message
-    %p#good
-      Good bye world!
+    - if group.messages.last.present?
+      %p#good
+        = group.messages.last.body
+    - else
+      %p#good
+        メッセージがありません
