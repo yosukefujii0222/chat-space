@@ -1,7 +1,7 @@
 - current_user.groups.each do |group|
   %div.chat-side__groups_list--group-name
     %p#sample
-      = group.groupname
+      = link_to group.groupname, group_messages_url(group.id)
   %div.chat-side__groups_list--group-message
     - if group.messages.last.present?
       %p#good

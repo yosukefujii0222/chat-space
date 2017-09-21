@@ -53,9 +53,10 @@
         &-name {
           padding-top: 20px;
           margin: 0 20px 5px 20px;
-          p#sample {
+          p#sample a {
             font-size: 15px;
             color: $side-menu-text-color;
+            text-decoration: none;
           }
         }
         &-message {
@@ -89,10 +90,13 @@
         float: right;
         border: 1px solid $accent-color;
         font-size: 15px;
-        color: $accent-color;
         margin-top: 28px;
         padding: 11px 20px 11px 20px;
         background-color: $main-bg-color;
+        a {
+          text-decoration: none;
+          color: $accent-color;
+        }
       }
       .clear {
         @include clear;
