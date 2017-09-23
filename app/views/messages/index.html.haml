@@ -35,8 +35,9 @@
 
   .chat-main__footer
     .chat-main__footer_form
-      = form_for @message, url: group_messages_url, method: :post do |m|
+      = form_for [@group, @message] do |m|
         .text-with-icon
+          =m.hidden_field :user_id, value: "#{@message.user_id}"
           = m.text_area :body, placeholder: "type a message"
           %label.file
             %i.fa.fa-picture-o
