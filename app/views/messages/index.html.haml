@@ -39,10 +39,10 @@
       = form_for [@group, @message] do |m|
         .text-with-icon
           =m.hidden_field :user_id, value: "#{@message.user_id}"
-          = m.text_area :body, placeholder: "type a message"
+          = m.text_area :body, placeholder: "type a message", class: "text_content"
           %label.file
             %i.fa.fa-picture-o
-              = m.file_field :image
+              = m.file_field :image, class: "image_content"
           .btn
             = m.submit "SEND", class: "send-button"
 

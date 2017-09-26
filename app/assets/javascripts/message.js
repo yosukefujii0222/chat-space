@@ -37,13 +37,15 @@ $(function() {
       if(data.image == null) {
         var html = only_body(data);
         $('.chat-main__body_list--message').append(html);
-        $('.new_message').val('');
+        $('.text_content').val('');
+        $('.image_content').val('');
         $('.send-button').prop('disabled', false);
         auto_scroll();
       }else {
         var html = body_and_image(data);
         $('.chat-main__body_list--message').append(html);
-        $('.new_message').val('');
+        $('.text_content').val('');
+        $('.image_content').val('');
         $('.send-button').prop('disabled', false);
         auto_scroll();
       }
