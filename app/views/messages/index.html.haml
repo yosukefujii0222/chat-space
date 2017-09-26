@@ -32,6 +32,7 @@
     .chat-main__body_list
       .chat-main__body_list--message
         = render partial: "messages/message"
+      .scroll_target
 
   .chat-main__footer
     .chat-main__footer_form
@@ -43,5 +44,5 @@
             %i.fa.fa-picture-o
               = m.file_field :image
           .btn
-            = m.submit "SEND"
+            = m.submit "SEND", class: "send-button"
 
