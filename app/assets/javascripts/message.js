@@ -1,25 +1,29 @@
 $(function() {
-  //メッセージと画像どちらもありの場合
-  function body_and_image(message) {
+
+  function buildHTML(message) {
+    var image_box = ""
+    if (message.image != null) {
+      image_box = `<img src="${message.image}">`
+    }
     var html = `<div class= "chat-main__body_list--message-name">${message.user_name}</div>
                 <div class= "chat-main__body_list--message-time">${message.updated_at}</div>
                 <div class= "clear"></div>
                 <div class= "chat-main__body_list--message-body">${message.body}</div>
-                <div class= "chat-main__body_list--message-image" src="${message.image}"></div>`;
-    return html;
-  }
-  //メッセージだけの場合
-  function only_body(message) {
-    var html = `<div class= "chat-main__body_list--message-name">${message.user_name}</div>
-                <div class= "chat-main__body_list--message-time">${message.updated_at}</div>
-                <div class= "clear"></div>
-                <div class= "chat-main__body_list--message-body">${message.body}</div>`;
+                <div class= "chat-main__body_list--message-image">${ image_box }</div>`;
     return html;
   }
   function auto_scroll() {
-    var scroll_target = $('.scroll_target').offset().top;
-    $(".chat-main__body").animate({scrollTop:scroll_target});
-    return false;
+    $(".chat-main__body").animate({scrollTop:$('.scroll_target').offset().top});
+  }
+  function prop_abled(data) {
+    $('.send-button').prop('disabled', false);
+  }
+  function new_form(data) {
+    $('.text_content').val('');
+    $('.image_content').val('');
+  }
+  function append_html_to_list(html) {
+    $('.chat-main__body_list--message').append(html);
   }
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
@@ -34,21 +38,11 @@ $(function() {
       contentType: false,
     })
     .done(function(data) {
-      if(data.image == null) {
-        var html = only_body(data);
-        $('.chat-main__body_list--message').append(html);
-        $('.text_content').val('');
-        $('.image_content').val('');
-        $('.send-button').prop('disabled', false);
-        auto_scroll();
-      }else {
-        var html = body_and_image(data);
-        $('.chat-main__body_list--message').append(html);
-        $('.text_content').val('');
-        $('.image_content').val('');
-        $('.send-button').prop('disabled', false);
-        auto_scroll();
-      }
+      var html = buildHTML(data);
+      append_html_to_list(html);
+      new_form(data);
+      prop_abled(data);
+      auto_scroll();
     })
     .fail(function() {
       alert('error');
