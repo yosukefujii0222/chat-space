@@ -9,8 +9,6 @@
           %ul
             - @group.errors.full_messages.each do |msg|
               %li= msg
-    / %form#edit_chat_group_22.edit_chat_group{"accept-charset" => "UTF-8", :action => "/chat_groups/22", :method => "post"}
-
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         %label.chat-group-form__label{for: "chat_group_name"} グループ名
@@ -19,12 +17,22 @@
           = f.text_area :groupname, placeholder: "グループ名を入力してください"
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
+        %label.chat-group-form__label{for: "chat_group_チャットメンバーを追加"} チャットメンバーを追加
       .chat-group-form__field--right
-        .check_box
-          = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-            = b.check_box + b.text
-
+        .chat-group-form__search.clearfix
+          %input{class: "chat-group-form__input", id: "user-search-field", placeholder: '追加したいユーザー名を入力してください', type: 'text'}
+        #user-search-result
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        %label.chat-group-form__label{for: "chat_group_ チャットメンバー"}チャットメンバー
+      .chat-group-form__field--right
+        -@group.users.each do |user|
+          .chat-group-user.clearfix
+            %p.chat-group-user__name
+              =user.name
+            %input{type: "hidden", name: "group[user_ids][]", value: user.id}
+            %link_to.user-search-add.chat-group-user__btn.chat-group-user__btn--remove 削除
+        #user-listed-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
