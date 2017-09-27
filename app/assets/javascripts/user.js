@@ -45,8 +45,7 @@ $(function(){
   //フォームに入力をすると発火すること
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
-    if ajax(input);
-
+    ajax(input);
   });
   //追加を押した時の挙動
   $(document).on('click', ".chat-group-user__btn--add", function(){
