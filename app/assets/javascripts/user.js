@@ -18,15 +18,24 @@ $(function(){
                 </div>`
     return html;
   }
-  //フォームに入力をすると発火すること
-  $("#user-search-field").on("keyup", function(){
-    var input = $("#user-search-field").val();
-    $.ajax({
+
+  //ajax内の記述を関数として抜き出す
+  function def_ajax(input) {
+    var to_controller = {
       type: 'GET',
       url: '/users',
       data: { keyword: input },
       dataType: 'json'
-    })
+    };
+    return to_controller;
+  }
+  //フォームに入力をすると発火すること
+  $("#user-search-field").on("keyup", function(){
+    var input = $("#user-search-field").val();
+    console.log(input);
+    $.ajax(
+      def_ajax(input)
+    )
     .done(function(users) {
       $('#user-search-result').empty();
       if (users.length !== 0) {
