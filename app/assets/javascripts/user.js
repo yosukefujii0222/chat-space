@@ -10,11 +10,11 @@ $(function(){
     return html;
   }
   //追加されたユーザー名を表示するhtmlブロック
-  function listedUser(user){
+  function listedUser(id, name){
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${ user.name }</p>
-                  <input type="hidden" name="group[user_ids][]"  value="${user.id}">
-                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--remove" data-user-id="${ user.id }" data-user-name="${ user.name }">削除</a>
+                  <p class="chat-group-user__name">${ name }</p>
+                  <input type="hidden" name="group[user_ids][]"  value="${ id }">
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--remove" data-user-id="${ id }" data-user-name="${ name }">削除</a>
                 </div>`
     return html;
   }
@@ -47,8 +47,7 @@ $(function(){
     var id = $(this).attr("data-user-id");
     var username = $(this).attr("data-user-name");
     $(this).parent().remove();
-    var user = {id: id, name: username};
-    var html = listedUser(user);
+    var html = listedUser(id, username);
     add_list.append(html);
   });
   //削除を押した時の挙動
