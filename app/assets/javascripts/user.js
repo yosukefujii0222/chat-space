@@ -18,24 +18,14 @@ $(function(){
                 </div>`
     return html;
   }
-
-  //ajax内の記述を関数として抜き出す
-  function def_ajax(input) {
-    var to_controller = {
+  //ajax以後の記述をすべて関数で記述
+  function ajax(input) {
+    $.ajax({
       type: 'GET',
       url: '/users',
       data: { keyword: input },
       dataType: 'json'
-    };
-    return to_controller;
-  }
-  //フォームに入力をすると発火すること
-  $("#user-search-field").on("keyup", function(){
-    var input = $("#user-search-field").val();
-    console.log(input);
-    $.ajax(
-      def_ajax(input)
-    )
+    })
     .done(function(users) {
       $('#user-search-result').empty();
       if (users.length !== 0) {
@@ -49,7 +39,14 @@ $(function(){
     })
     .fail(function() {
       alert('検索に失敗しました');
-    })
+    });
+  }
+
+  //フォームに入力をすると発火すること
+  $("#user-search-field").on("keyup", function(){
+    var input = $("#user-search-field").val();
+    if ajax(input);
+
   });
   //追加を押した時の挙動
   $(document).on('click', ".chat-group-user__btn--add", function(){
