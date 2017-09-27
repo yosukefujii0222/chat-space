@@ -19,7 +19,7 @@ $(function(){
     return html;
   }
   //ajax以後の記述をすべて関数で記述
-  function ajax(input) {
+  function incremental_search(input) {
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -45,7 +45,9 @@ $(function(){
   //フォームに入力をすると発火すること
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
-    ajax(input);
+    if(input) {
+      incremental_search(input);
+    }
   });
   //追加を押した時の挙動
   $(document).on('click', ".chat-group-user__btn--add", function(){
