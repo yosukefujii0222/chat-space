@@ -65,7 +65,6 @@ $(function() {
       dataType: 'json',
     })
     .done(function(messages) {
-      console.log(messages);
       var id = $('.chat:last-child').data('message-id');
       var insertHTML = '';
       messages.forEach(function(data) {
